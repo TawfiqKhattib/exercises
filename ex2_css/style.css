@@ -1,0 +1,64 @@
+#parent {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    background-color: mediumpurple;
+}
+
+.bcolor {
+    background-color: gray;
+    width: 20px;
+    bottom: 10px;
+}
+
+#money {
+    position: absolute;
+    color: black;
+    left: 10px;
+    top: 10px;
+    font-size: 20px;
+}
+
+#time {
+    position: absolute;
+    color: black;
+    bottom: 5px;
+    right: 10px;
+    font-size: 20px;
+}
+
+#div1 {
+    position: absolute;
+    left: 10px;
+    height: 15px;
+}
+
+#div2 {
+    position: absolute;
+    left: 50px;
+    height: 65px;
+}
+
+#div3 {
+    position: absolute;
+    left: 90px;
+    height: 95px;
+}
+
+#div4 {
+    position: absolute;
+    left: 130px;
+    height: 85px;
+}
+
+#div5 {
+    position: absolute;
+    left: 170px;
+    height: 75px;
+}
+
+#div6 {
+    position: absolute;
+    left: 210px;
+    height: 45px;
+}
