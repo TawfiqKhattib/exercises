@@ -38,3 +38,27 @@ let library = {
 }
 
 //ex5
+const reservations = {
+    Bob: { claimed: false },
+    Ted: { claimed: true }
+}
+
+const name = prompt('Please enter the name for your reservation');
+if (name.toLowerCase() === "bob") {
+    if (!reservations.Bob.claimed) {
+        console.log("welcome the user")
+    } else {
+        console.log("you already claimed")
+    }
+}
+if (name.toLowerCase() === "ted") {
+    if (!reservations.Ted.claimed) {
+        console.log("welcome the user")
+    } else {
+        console.log("you already claimed")
+    }
+} else {
+    reservations.name = { claimed: false }
+
+}
+console.log(reservations)
