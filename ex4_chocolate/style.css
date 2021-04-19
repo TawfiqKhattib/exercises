@@ -1,0 +1,33 @@
+div {
+    display: inline-block;
+    clear: left;
+    float: left;
+    padding: 15px;
+}
+
+.container2 {
+    clear: left;
+    float: left;
+    position: relative;
+    bottom: 30px;
+}
+
+#line {
+    border-top: solid #66320E;
+    position: absolute;
+    width: 136px;
+    top: 50px;
+    left: 26px;
+}
+
+.choc {
+    float: right;
+    background-color: #66320E;
+    border: 3px solid black;
+}
+
+#chocblack {
+    float: right;
+    background-color: black;
+    border: 3px solid black;
+}
