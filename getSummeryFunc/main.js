@@ -66,5 +66,6 @@ const catchphrase = function(name, pharse) {
     return capitalize(name) + " loves to say " + ' "' + pharse + '"'
 }
 
-console.log(getSummary(people_info[1]))
-console.log(getSummary(people_info[2]))
+for (let index in people_info) {
+    console.log(getSummary(people_info[index]))
+}
