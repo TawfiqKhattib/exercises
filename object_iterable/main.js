@@ -1,44 +1,40 @@
-let obj = {}
+let obj = {
 
-function random() {
-    return Math.floor(Math.random() * 100) + 1;
-}
-for (let i = 0; i < 10; i++) {
-    obj[i] = random()
-}
-console.log(obj)
+    [Symbol.iterator]: function() {
+        let index = 0;
+        return {
+            next: function() {
+                if (index < Object.keys(obj).length) {
+                    if (obj[index] % 2 === 0) {
+                        return {
+                            value: obj[index++],
+                            done: false
+                        }
+                    } else {
+                        index++
+                        return {
+                            value: this.next, // here problem i have to mover to the next index if num is odd
+                            done: false
+                        }
+                    }
 
-function Iterable(object) {
-    let index = 0
-    return {
-        next: function() {
-            return index < Object.keys(obj).length ? {
-                value: object[index++],
-                done: false
-            } : { done: true }
+                } else {
+                    return { done: true }
+                }
+
+            }
         }
     }
 }
 
-const even = Iterable(obj)
-for (let i = 0; i < Object.keys(obj).length; i += 1) {
-    if (i % 2 == 0) {
-        console.log(even.next().value)
-    } else {
-        even.next()
+const fillObj = function() {
+    for (let i = 0; i < 10; i++) {
+        obj[i] = Math.floor(Math.random() * 100) + 1;
     }
 }
-//print even numbers
-console.log(" ")
-const even2 = Iterable(obj)
-let val
-for (let i = 0; i < Object.keys(obj).length; i += 1) {
-    val = even2.next().value
-    if (val % 2 == 0) {
-        console.log(val)
-    }
-}
+fillObj()
+console.log(obj)
 
-/*for (let i = 0; i < Object.keys(obj).length; i += 2) {
-    console.log(even.next()[i.toString])
-}*/
+for (let x of obj) {
+    console.log(x)
+}
