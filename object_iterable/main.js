@@ -13,7 +13,7 @@ let obj = {
                     } else {
                         index++
                         return {
-                            value: this.next, // here problem i have to mover to the next index if num is odd
+                            value: this.next,
                             done: false
                         }
                     }
