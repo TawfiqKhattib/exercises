@@ -43,7 +43,7 @@ const pumpFuel = function(plane) {
 };
 
 const airplane = {
-    fuel: 2,
+    fuel: 1,
     fly: function() {
         if (this.fuel < 2) {
             return 'on the ground!';
@@ -90,7 +90,7 @@ const revealSecret = function() {
 const shoutIt = function(person, func) {
     person.revealItAll = func;
     const result = person.revealItAll();
-    //alert(person.name + " said: " + this.result);
+    console.log(person.name + " said: " + result);
 };
 
 const avi = {
