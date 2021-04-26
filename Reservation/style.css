@@ -1,0 +1,17 @@
+#nameIn {
+    position: absolute;
+}
+
+#check {
+    position: absolute;
+    top: 60px
+}
+
+#msg {
+    position: relative;
+    color: red;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 100px;
+    left: 200px
+}
