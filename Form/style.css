@@ -1,0 +1,29 @@
+#container {
+    background-color: #2ecc71;
+    height: 350px;
+    left: 200px;
+    position: relative;
+    top: 100px;
+    width: 400px;
+}
+
+.birthtopLeft {
+    left: 150px;
+    bottom: 72px;
+}
+
+.phoneplace {
+    bottom: 60px;
+}
+
+.FontAr {
+    position: relative;
+}
+
+.inputs {
+    position: relative;
+}
+
+.forwidth {
+    width: 100px;
+}
