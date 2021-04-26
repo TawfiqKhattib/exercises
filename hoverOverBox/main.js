@@ -13,5 +13,16 @@ for (let i = 0; i < 5; i++) {
 }
 
 const changeBoxColor = function(x) {
-    x.style.backgroundColor = getRandomColor()
+    x.style.backgroundColor = getRandomColor();
+    let flag = true;
+    for (let node = 0; node < document.querySelectorAll(".box").length; node++) {
+        if (document.querySelectorAll(".box")[node].style.backgroundColor != document.querySelectorAll(".box")[0].style.backgroundColor) {
+            flag = false;
+        }
+    }
+    if (flag) {
+        const header = document.createElement("h3");
+        header.textContent = "Nice Job!!!";
+        document.body.appendChild(header);
+    }
 }
