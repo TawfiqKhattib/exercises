@@ -1,0 +1,21 @@
+#container {
+    padding: 50px;
+    background-color: black;
+    text-align: center;
+}
+
+#containerMsg {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXqerEXEX0adkF82ImSwbiwhArF4CUNi_O3A&usqp=CAU");
+}
+
+.btn {
+    background-color: green;
+    margin: 15px;
+    padding: 15px;
+}
+
+.addProduct {
+    /* background-color: rgb(241, 240, 232); */
+    border: 1px solid;
+    margin: 5px;
+}
