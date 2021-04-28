@@ -1,0 +1,44 @@
+/* Here we've use the grid-template-areas, because the overall layout is static! Everything inside though, that's a different story
+ */
+
+#chat {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 15fr 1fr;
+    grid-template-areas: "f c" "f i";
+}
+
+#friends {
+    grid-area: f;
+    display: grid;
+    background-color: rgb(247, 0, 123);
+}
+
+#chatbox {
+    grid-area: c;
+    display: grid;
+    background-color: gainsboro;
+    /* grid-template-columns: 5fr 5fr;
+    grid-template-rows: 3fr 3fr 3fr 3fr 3fr; */
+    /* grid-template-columns: 100px 100px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
+    /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+    /* grid-template-areas: "l l" "l r" "r l" "l r" "r l"; */
+    grid-template-rows: auto auto auto;
+}
+
+#input {
+    grid-area: i;
+    display: grid;
+    grid-template-columns: 20fr 4fr;
+    grid-template-areas: "l r"
+}
+
+.left {
+    grid-area: l;
+}
+
+.right {
+    grid-area: r;
+}
