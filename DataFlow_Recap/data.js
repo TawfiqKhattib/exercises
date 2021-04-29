@@ -1,0 +1,1 @@
+const posts = [{ name: "adi", text: "first msg" }, { name: "tami", text: "second msg" }];
