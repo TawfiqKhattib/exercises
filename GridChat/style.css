@@ -9,7 +9,7 @@
     grid-template-areas: "f c" "f i";
 }
 
-#friends {
+.friends {
     grid-area: f;
     display: grid;
     background-color: rgb(247, 0, 123);
@@ -33,6 +33,7 @@
     display: grid;
     grid-template-columns: 20fr 4fr;
     grid-template-areas: "l r";
+    grid-template-rows: 5fr 20fr;
 }
 
 .text-container {
@@ -56,4 +57,49 @@
     background-color: rgb(115, 163, 66);
     text-align: center;
     text-justify: center;
+}
+
+#chat2 {
+    display: grid block;
+    height: 100vh;
+    grid-template-rows: 1fr 15fr 1fr;
+    grid-template-areas: "f c" "f i";
+}
+
+.text2-container {
+    display: grid;
+    grid-template-rows: 15fr 3fr;
+    grid-template-columns: 10fr 10fr 10fr;
+}
+
+.header {
+    grid-area: h;
+    display: grid;
+}
+
+.GridBurger {
+    display: inline-block;
+}
+
+.text {
+    display: inline-block;
+}
+
+.content {
+    display: grid;
+    grid-template-rows: 8fr 5fr 10fr;
+    grid-template-areas: "f c" "f i" "f l";
+}
+
+#chatbox2 {
+    grid-area: c;
+    display: grid;
+    background-color: gainsboro;
+    /* grid-template-columns: 5fr 5fr;
+    grid-template-rows: 3fr 3fr 3fr 3fr 3fr; */
+    /* grid-template-columns: 100px 100px; */
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-rows: 2fr 5fr 3fr;
+    /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+    grid-template-areas: "f l" "f r";
 }
