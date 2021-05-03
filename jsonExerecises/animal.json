@@ -1,1 +1,5 @@
-{ "name": "", "weight": "", "lives": "", "dangers": "true\false", "fod": [], "AnimalEatIt": [], "deliciuose": 1 }
+{
+    "animals": [{ "name": "cow", "weight": "500-650kg", "lives": "european", "dangers": false, "fod": ["grass", "legumes", "silage"], "AnimalEatIt": ["human", "wolf"], "deliciuose": 5 }, { "name": "elsephent", "weight": "1000000-150000kg", "lives": "asian", "dangers": false, "fod": ["grass", "legumes", "silage"], "AnimalEatIt": ["lions", "wolf", "tiggers"], "deliciuose": 1 }, { "name": "wolf", "weight": "50-65kg", "lives": "asian", "dangers": true, "fod": ["meet"], "AnimalEatIt": ["lions", "tiggers"], "deliciuose": 1 }
+
+    ]
+}
