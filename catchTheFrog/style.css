@@ -51,15 +51,10 @@
     background-color: red;
 }
 
-
-/* 
-@keyframes blinker {
-    50% {
-        opacity: 0;
-        color: red;
-    }
-} */
-
 .yellow {
     color: yellow;
+}
+
+.items {
+    color: blanchedalmond;
 }

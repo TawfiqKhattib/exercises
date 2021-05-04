@@ -1,6 +1,7 @@
 const Render = function() {
     const renderFrogs = function(frogs) {
         $("#game").empty()
+        const arrFrogs = []
         for (let i = 0; i < frogs.length; i++) {
             frogBox = {
                 id: frogs[i].id,
@@ -9,9 +10,12 @@ const Render = function() {
                 size: frogs[i].size,
                 color: frog.randomColor()
             }
+            arrFrogs.push(frogBox)
+        }
+        if (arrFrogs.length > 0) {
             const source = $('#menu-template').html();
             const template = Handlebars.compile(source);
-            const newHTML = template(frogBox);
+            const newHTML = template({ Frogs: arrFrogs });
             $("#game").append(newHTML)
         }
     }

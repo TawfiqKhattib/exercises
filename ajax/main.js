@@ -63,10 +63,9 @@ const bookrelvData = function(word) {
     })
 }
 
-// bookrelvData("word")
+// bookrelvData("world")
 
 // ex4+5
-
 // import { GiphyFetch } from '@giphy/js-fetch-api'
 
 // const gf = new GiphyFetch('0wrG6ItiPBQTHtOJoe2geoBpOqiRTmkP')

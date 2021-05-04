@@ -11,8 +11,8 @@ $("#start").on("click", function() {
     timer.start()
 })
 
-$("#game").on("click", ".frog", function() {
-    let frogID = $(this).data("id")
+$("#game").on("click", ".items", function() {
+    let frogID = $(this).find(".frog").data("id")
     frog.removeFrog(frogID)
     $("#frogCount").text(frog.countFrogs())
     if (frog.countFrogs() === 0) {
