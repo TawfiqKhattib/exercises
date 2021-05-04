@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Catch the Frogs</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div id="timer">
+            <span id="time" class="sec">-</span> <span class="sec">seconds left</span>
+        </div>
+        <div id="game"></div>
+
+        <div id="level">
+            level <span id="levelCount ">1</span>
+        </div>
+        <div id="start">
+            start game
+        </div>
+        <div id="frogs">
+            <span id="frogCount ">1</span> frogs left
+        </div>
+
+    </div>
+
+    <script id="menu-template" type="text/x-handlebars-template">
+        <div class="items">
+            {{#each forg}}
+            <div class="frog" data-id="{{id}}" style="left: '{{left}}'px; top: '{{top}}'px;">
+                <i class="fas fa-frog" style="
+                font-size: '${{size}}'px;
+                color: '{{color}}';"></i>
+            </div>
+            {{/each}}
+        </div>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="render.js "></script>
+    <script src="logic.js "></script>
+    <script src="main.js "></script>
+</body>
+
+</html>
