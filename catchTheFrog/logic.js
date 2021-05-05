@@ -11,7 +11,7 @@ const Frog = function() {
 
         for (let i = 0; i < level; i++) {
             numID = frogs.length + 1
-            let num = Math.floor(Math.random() * 15)
+            let num = Math.floor(Math.random() * 15 + 10)
             frogs.push({
                 size: num,
                 id: numID

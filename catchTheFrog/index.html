@@ -30,9 +30,9 @@
     </div>
 
     <script id="menu-template" type="text/x-handlebars-template">
-        <div class="items">Frog {{#each Frogs}}
-            <div class="frog" data-id="{{id}}" style="left: '{{left}}'; top: '{{top}}';font-size: '${{size}}';
-            color: '{{color}}';">
+        <div class="items"> {{#each Frogs}}
+            <div class="frog" data-id="{{id}}" style="left: {{left}}px; top: {{top}}px;
+            color: '{{color}}';"><img src="https://www.kidspeace.org/wp-content/uploads/2019/05/frog.png" style="width:{{size}}px;">
             </div>
             {{/each}}
         </div>

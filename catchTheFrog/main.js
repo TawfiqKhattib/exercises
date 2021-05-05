@@ -20,7 +20,7 @@ $("#game").on("click", ".items", function() {
         timer.moreTime()
         $("#levelCount").text(frog.getLevel())
         $("#frogCount").text(frog.getLevel())
-        renderer.render(frog.getFrogs())
+            // renderer.render(frog.getFrogs())
     }
     renderer.render(frog.getFrogs())
 })
