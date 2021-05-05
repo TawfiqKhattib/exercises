@@ -18,29 +18,27 @@
         <div id="game"></div>
 
         <div id="level">
-            level <span id="levelCount ">1</span>
+            level <span id="levelCount">1</span>
         </div>
         <div id="start">
             start game
         </div>
         <div id="frogs">
-            <span id="frogCount ">1</span> frogs left
+            <span id="frogCount">1</span> frogs left
         </div>
 
     </div>
 
     <script id="menu-template" type="text/x-handlebars-template">
         <div class="items">Frog {{#each Frogs}}
-            <div class="frog" data-id="{{id}}" style="left: '{{left}}'px; top: '{{top}}'px;">
-                <i class="fas fa-frog" style="
-                font-size: '${{size}}'px;
-                color: '{{color}}';"></i>
+            <div class="frog" data-id="{{id}}" style="left: '{{left}}'; top: '{{top}}';font-size: '${{size}}';
+            color: '{{color}}';">
             </div>
             {{/each}}
         </div>
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js "></script>
     <script src="render.js "></script>
     <script src="logic.js "></script>
     <script src="main.js "></script>

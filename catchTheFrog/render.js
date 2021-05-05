@@ -10,7 +10,7 @@ const Render = function() {
                 size: frogs[i].size,
                 color: frog.randomColor()
             }
-            arrFrogs.push(frogBox)
+            arrFrogs.push(arrFrogs)
         }
         if (arrFrogs.length > 0) {
             const source = $('#menu-template').html();
