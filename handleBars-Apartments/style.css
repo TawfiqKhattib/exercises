@@ -163,3 +163,13 @@ p {
     background-color: rgb(231, 165, 165);
     color: black;
 }
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.item {
+    margin: 50px;
+    background: red;
+}

@@ -38,33 +38,15 @@
     <!-- You should start doing handlebar stuff here -->
     <!-- Your Code Here -->
     <script id="menu-template" type="text/x-handlebars-template">
+        {{#each apartment}}
         <div class="items">
-            {{#each apartment}}
-            <ul>
-                <li>
-                    <a href="{{img}}"></a>
-                </li>
-                <li>
-                    <p>{{address}}</p>
-                </li>
-                <li>
-                    <p>{{price}}</p>
-                </li>
-                <li>
-                    <p>{{rooms}}</p>
-                </li>
-                <li>
-                    <p>{{parking}}</p>
-                </li>
-                <li>
-                    <p>{{immediate}}</p>
-                </li>
-                <li>
-                    <p>{{contactDetails}}</p>
-                </li>
-            </ul>
-            {{/each}}
+            <img src="{{img}}">
+            <div class="item">
+                {{address}} {{price}} {{rooms}} {{parking}} {{immediate}} {{contactDetails}}
+            </div>
+
         </div>
+        {{/each}}
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
