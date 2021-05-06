@@ -15,11 +15,12 @@
     </div>
 
     <script id="menu-template" type="text/x-handlebars-template">
+        {{#each person}}
         <div class="person">
             <p>{{name}}</p>
             <p>{{email}}</p>
         </div>
-
+        {{/each}}
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     <script src="main.js "></script>
