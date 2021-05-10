@@ -102,7 +102,7 @@ class APIManager {
             method: "GET",
             url: 'https://baconipsum.com/api/?callback=?',
             success: function(data) {
-                meat.meattext = data[Math.floor(Math.random() * data.length)];
+                meat.meattext = data[Math.floor(Math.random() * data.length + 1)];
             },
             error: function(xhr, text, error) {
                 alert("somthing gone wrong!!");
