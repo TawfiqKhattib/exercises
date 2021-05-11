@@ -17,8 +17,9 @@ $("#load").on("click", function() {
 
 $("#display").on("click", function() {
     let render = new Renderer();
-    render.renderUser();
-    render.renderQuote();
-    render.renderPokemon();
-    render.renderMeat();
+    render.renderUser(apimanag.data.user);
+    render.renderFriends(apimanag.data.friends);
+    render.renderQuote(apimanag.data.quote);
+    render.renderPokemon(apimanag.data.pokemon);
+    render.renderMeat(apimanag.data.meat);
 })
