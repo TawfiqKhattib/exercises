@@ -42,5 +42,11 @@ class Renderer {
         $(".meat-container").append(newHTMLmeat)
     }
 
+    renderDropDownusers(user) {
+        const sourcequote = $('#dropDown-template').html();
+        const templateqoute = Handlebars.compile(sourcequote);
+        const newHTMLqoute = templateqoute(user);
+        $("#userList").append(newHTMLqoute)
+    }
 
 }

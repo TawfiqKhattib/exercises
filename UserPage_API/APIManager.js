@@ -74,7 +74,8 @@ class APIManager {
             success: function(data) {
                 self.data.pokemon = {
                     img: data.sprites.front_default,
-                    name: data.name
+                    name: data.name,
+                    UpperName: data.name.charAt(0).toUpperCase() + data.name.slice(1)
                 }
             },
             error: function(xhr, text, error) {

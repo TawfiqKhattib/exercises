@@ -28,6 +28,8 @@
         <div class="buttons">
             <button id="load">Load User Data</button>
             <button id="display">Display User</button>
+            <button id="save">Save User Page”</button>
+            <button id="loadPage">Load User Page</button>
         </div>
     </div>
 
@@ -59,7 +61,7 @@
         <div class="pokemon">
             <img src="{{img}}">
             <p class="pokemon">
-                <span>Favorite Pokemon: {{name}}</span>
+                <span>Favorite Pokemon: {{UpperName}} {{name}}</span>
             </p>
         </div>
     </script>
@@ -71,6 +73,10 @@
                 {{meattext}}
             </p>
         </div>
+    </script>
+
+    <script id="dropDown-template" type="text/x-handlebars-template">
+        <option value={{index}}> {{userFirstName}} {{userLastName}}</option>
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
