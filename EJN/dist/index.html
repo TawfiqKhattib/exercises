@@ -12,6 +12,7 @@
     <div id="head">
         <input type="text" id="prod-input" placeholder="what's the name of product?">
         <button id="search">Search</button>
+        <button id="dreamTeam">dreamTeam</button>
     </div>
     <div id="players"></div>
 
@@ -19,11 +20,12 @@
 
         {{#each player}}
         <div class="grid">
-            <p id="name">{{name}}</p>
+            <p id="name">{{firstName}},{{lastName}}</p>
             <p id="number">{{ number}} </p>
-            <img src={{url}} alert="img" class="mimg">
+            <img src='https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}' alert="img" class="mimg" onerror="this.onerror=null;this.src='http://www.clipartbest.com/cliparts/9i4/6Gk/9i46Gk4GT.jpg' ">
             <span id="spanImg"></span>
             <p id="pos">{{val}}</p>
+            <button id="addToDreamTeam">addToDreamTeam</button>
         </div>
         {{/each}}
     </script>
