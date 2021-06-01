@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weather Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+</head>
+
+<body>
+    <section class="top-banner head">
+        <div class="container">
+            <h1 class="heading">Simple Weather App</h1>
+            <div>
+                <input type="text" id="prod-input" placeholder="Search for a city">
+                <button id="search" class="design">search</button>
+                <button id="save" class="design">save</button>
+                <button id="remove" class="design">remove</button>
+                <button id="show" class="design">show All cities Saved</button>
+                <span class="msg"></span>
+            </div>
+        </div>
+    </section>
+    <div id='city-container'></div>
+    <script id="city-template" type="text/x-handlebars-template">
+        <!-- {{#each cityData}} -->
+        <div class="city">
+            <p id="name">{{name}}</p>
+            <p id="temperature">{{ temperature}} </p>
+            <p id="condition">{{condition}}</p>
+            <p id="conditionPic">{{conditionPic}}</p>
+        </div>
+        <!-- {{/each}} -->
+    </script>
+
+    <script src="jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="Model.js"></script>
+    <script src="Render.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

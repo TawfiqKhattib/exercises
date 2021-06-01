@@ -1,0 +1,49 @@
+body {
+    letter-spacing: 0.1em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+.city-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    /* grid-row: repeat(20, auto) */
+}
+
+.head {
+    text-align: center;
+}
+
+#prod-input {
+    height: 30px;
+}
+
+.design {
+    height: 25px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.city {
+    background-color: rgb(126, 145, 167);
+    margin: 5px;
+    text-align: center;
+}
+
+@media screen and (max-width:550px) {}
