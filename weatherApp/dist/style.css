@@ -9,7 +9,7 @@ body {
     font-weight: normal;
 }
 
-.city-container {
+#city-container {
     display: grid;
     grid-template-columns: repeat(3, auto);
     /* grid-row: repeat(20, auto) */
@@ -25,25 +25,29 @@ body {
 
 .design {
     height: 25px;
+    margin: 7px;
 }
 
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+.city-container {
+    display: grid;
+    grid-template-columns: repet(3, fr);
+    grid-template-columns: repeat(3, auto);
 }
 
 .city {
-    background-color: rgb(126, 145, 167);
-    margin: 5px;
+    background-color: rgb(224, 227, 231);
     text-align: center;
+    justify-content: left;
+    padding: 15px;
+    max-width: 250px;
+    margin: 15px;
+    border: 1px solid black;
+    box-shadow: darkgray;
+    box-shadow: 6px 7px lightgrey;
+}
+
+.cityData {
+    margin: 5px;
 }
 
 @media screen and (max-width:550px) {}

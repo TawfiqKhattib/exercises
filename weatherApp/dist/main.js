@@ -5,22 +5,46 @@ let cityDataFromApi = []
 $("#search").on("click", async function() {
     let input = $("#prod-input").val();
     const cities = await city.getCityData(input)
-    render.cityRender(cities);
+    cityDataFromApi = cities;
+    render.cityRender(cityDataFromApi);
     // cityDataFromApi = await city.getCityData(input)
     $("#prod-input").val("");
 });
 
-$("#save").on("click", async function() {
-    let input = $("#prod-input").val();
-    const cities = await city.saveCity(input)
-    render.cityRender(cityData);
+$("div").on("click", '#save', async function() {
+    const cityName = $(this).closest(".city").find("#name").text()
+    const cities = await city.saveCity(cityName)
+    cityDataFromApi = cities;
+    render.cityRender(cityDataFromApi);
     // cityDataFromApi = await city.saveCity(input);
-    $("#prod-input").val("");
+
 });
 
-$("#remove").on("click", function() {
-    let input = $("#prod-input").val();
-    city.removeCity(input).then(cityData => render.cityRender(cityData));
+$("div").on("click", '#remove', async function() {
+    const cityName = $(this).closest(".city").find("#name").text()
+    await city.removeCity(cityName); //.then(cityData => render.cityRender(cityData));
+    // cityDataFromApi.push(cities);
+    for (let index in cityDataFromApi) {
+        if (cityDataFromApi[index].name === cityName) {
+            cityDataFromApi.splice(index, 1);
+        }
+    }
+    render.cityRender(cityDataFromApi);
     // cityDataFromApi = await city.removeCity(input);
     $("#prod-input").val("");
 });
+
+// $("#show").on("click", async function() {
+//     let input = $("#prod-input").val();
+//     const cities = await city.getDataFromDB();
+//     render.cityRender(cities);
+//     $("#prod-input").val("");
+// });
+
+const showWeatherInDb = async function() {
+    const cities = await city.getDataFromDB();
+    if (cities.length >= 1) {
+        render.cityRender(cities);
+    }
+}
+showWeatherInDb();

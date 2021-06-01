@@ -19,27 +19,27 @@
             <div>
                 <input type="text" id="prod-input" placeholder="Search for a city">
                 <button id="search" class="design">search</button>
-                <button id="save" class="design">save</button>
-                <button id="remove" class="design">remove</button>
-                <button id="show" class="design">show All cities Saved</button>
                 <span class="msg"></span>
             </div>
         </div>
     </section>
     <div id='city-container'></div>
     <script id="city-template" type="text/x-handlebars-template">
-        <!-- {{#each cityData}} -->
+        {{#each cities}}
         <div class="city">
-            <p id="name">{{name}}</p>
-            <p id="temperature">{{ temperature}} </p>
-            <p id="condition">{{condition}}</p>
-            <p id="conditionPic">{{conditionPic}}</p>
+            <p id="name" class="cityData">{{name}}</p>
+            <p id="temperature" class="cityData">{{ temperature}} </p>
+            <p id="condition" class="cityData">{{condition}}</p>
+            <p id="conditionPic" class="cityData">{{conditionPic}}</p>
+            <button id="save" class="design cityData">save</button>
+            <button id="remove" class="design cityData">remove</button>
         </div>
-        <!-- {{/each}} -->
+        <!-- <h1>test</h1> -->
+        {{/each}}
     </script>
 
+    <script src="/handlebars/dist/handlebars.js"></script>
     <script src="jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     <script src="Model.js"></script>
     <script src="Render.js"></script>
     <script src="main.js"></script>
