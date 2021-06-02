@@ -2,18 +2,30 @@ const city = new City();
 const render = new Renderer()
 let cityDataFromApi = []
 
+$("#prod-input").on("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("search").click();
+    }
+});
+
 $("#search").on("click", async function() {
     let input = $("#prod-input").val();
-    const cities = await city.getCityData(input)
-    cityDataFromApi = cities;
-    render.cityRender(cityDataFromApi);
+    if (input !== '') {
+        let cities = await city.getCityData(input);
+        cities = cities.filter(function(v) { return typeof(v) !== "string" });
+        cityDataFromApi = cities;
+        render.cityRender(cityDataFromApi);
+
+    }
     // cityDataFromApi = await city.getCityData(input)
     $("#prod-input").val("");
 });
 
 $("div").on("click", '#save', async function() {
     const cityName = $(this).closest(".city").find("#name").text()
-    const cities = await city.saveCity(cityName)
+    let cities = await city.saveCity(cityName);
+    cities = cities.filter(function(v) { return typeof(v) !== "string" });
     cityDataFromApi = cities;
     render.cityRender(cityDataFromApi);
     // cityDataFromApi = await city.saveCity(input);

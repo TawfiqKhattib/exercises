@@ -20,17 +20,19 @@ class City {
         let cityData = await $.get(`/city/${name}`)
             // citiesData.push(cityData)
 
-        let flag = true;
-        for (let item of citiesData) {
-            if (item.name === cityData.name) {
-                flag = false;
-                item.temperature = cityData.temperature;
-                item.condition = cityData.condition;
-                item.conditionPic = cityData.conditionPic;
+        if (typeof(cityData) === "object") {
+            let flag = true;
+            for (let item of citiesData) {
+                if (item.name === cityData.name) {
+                    flag = false;
+                    item.temperature = cityData.temperature;
+                    item.condition = cityData.condition;
+                    item.conditionPic = cityData.conditionPic;
+                }
             }
-        }
-        if (flag) {
-            citiesData.push(cityData);
+            if (flag) {
+                citiesData.push(cityData);
+            }
         }
         return citiesData;
 
@@ -39,17 +41,19 @@ class City {
     saveCity = async function(name) {
         // const promise = new Promise((resolve, reject) => {
         let cityData = await $.post("/cityPost/", name); //, function(citiesData) {
-        let flag = true;
-        for (let item of citiesData) {
-            if (item.name === cityData.name) {
-                flag = false;
-                item.temperature = cityData.temperature;
-                item.condition = cityData.condition;
-                item.conditionPic = cityData.conditionPic;
+        if (typeof(cityData) === "object") {
+            let flag = true;
+            for (let item of citiesData) {
+                if (item.name === cityData.name) {
+                    flag = false;
+                    item.temperature = cityData.temperature;
+                    item.condition = cityData.condition;
+                    item.conditionPic = cityData.conditionPic;
+                }
             }
-        }
-        if (flag) {
-            citiesData.push(cityData);
+            if (flag) {
+                citiesData.push(cityData);
+            }
         }
         return citiesData;
         //}

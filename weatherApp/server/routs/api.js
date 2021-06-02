@@ -15,6 +15,10 @@ router.get('/city/:cityName', function(req, res) {
         if (err) {
             res.send("err"); // you need to handle error
         }
+        if (response.statusCode === 404) {
+            res.send('');
+            return;
+        }
         weatherData = JSON.parse(data);
         let cityDta = { name: weatherData.name, temperature: weatherData.main.temp, condition: weatherData.weather[0].main, conditionPic: weatherData.weather[0].description };
         res.send(cityDta);
@@ -34,6 +38,9 @@ router.post('/cityPost/', function(req, res) {
     const data = urllib.request(cityWeatherUrl, function(err, data, response) {
         if (err) {
             throw err; // you need to handle error
+        }
+        if (response.statusCode === 404) {
+            res.send('');
         }
         weatherData = JSON.parse(data);
         const city = new CityWeather({ name: weatherData.name, temperature: weatherData.main.temp, condition: weatherData.weather[0].main, conditionPic: weatherData.weather[0].description })
