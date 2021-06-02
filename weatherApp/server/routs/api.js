@@ -37,7 +37,7 @@ router.post('/cityPost/', function(req, res) {
     let cityWeatherUrl = weatherUrl + Object.keys(req.body)[0] + apiKey;
     const data = urllib.request(cityWeatherUrl, function(err, data, response) {
         if (err) {
-            throw err; // you need to handle error
+            throw err;
         }
         if (response.statusCode === 404) {
             res.send('');
@@ -46,9 +46,7 @@ router.post('/cityPost/', function(req, res) {
         const city = new CityWeather({ name: weatherData.name, temperature: weatherData.main.temp, condition: weatherData.weather[0].main, conditionPic: weatherData.weather[0].description })
         city.save();
         let cityDta = { name: weatherData.name, temperature: weatherData.main.temp, condition: weatherData.weather[0].main, conditionPic: weatherData.weather[0].description };
-        // CityWeather.CityWeather.findOneAndUpdate({ name: city.name }, { $set: { temperature: city.temperature, condition: city.condition, conditionPic: city.conditionPic } }, function(err, city) {
         res.send(cityDta);
-        // });
     })
 
 

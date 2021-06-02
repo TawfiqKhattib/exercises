@@ -4,7 +4,6 @@ const bodyParser = require('body-parser')
 
 const api = require('./server/routs/api')
 const mongoose = require('mongoose')
-    // const Schema = mongoose.Schema
 
 mongoose.connect("mongodb://localhost/mongoose-weather", { useNewUrlParser: true })
 
@@ -17,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'node_modules')))
 app.use('/', api)
 
 
-const port = 3005 //because why not
+const port = 3005
 app.listen(port, function() {
     console.log(`Server running on ${port}`)
 })

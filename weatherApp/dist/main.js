@@ -18,7 +18,6 @@ $("#search").on("click", async function() {
         render.cityRender(cityDataFromApi);
 
     }
-    // cityDataFromApi = await city.getCityData(input)
     $("#prod-input").val("");
 });
 
@@ -28,30 +27,20 @@ $("div").on("click", '#save', async function() {
     cities = cities.filter(function(v) { return typeof(v) !== "string" });
     cityDataFromApi = cities;
     render.cityRender(cityDataFromApi);
-    // cityDataFromApi = await city.saveCity(input);
 
 });
 
 $("div").on("click", '#remove', async function() {
     const cityName = $(this).closest(".city").find("#name").text()
-    await city.removeCity(cityName); //.then(cityData => render.cityRender(cityData));
-    // cityDataFromApi.push(cities);
+    await city.removeCity(cityName);
     for (let index in cityDataFromApi) {
         if (cityDataFromApi[index].name === cityName) {
             cityDataFromApi.splice(index, 1);
         }
     }
     render.cityRender(cityDataFromApi);
-    // cityDataFromApi = await city.removeCity(input);
     $("#prod-input").val("");
 });
-
-// $("#show").on("click", async function() {
-//     let input = $("#prod-input").val();
-//     const cities = await city.getDataFromDB();
-//     render.cityRender(cities);
-//     $("#prod-input").val("");
-// });
 
 const showWeatherInDb = async function() {
     const cities = await city.getDataFromDB();

@@ -1,8 +1,5 @@
 let citiesData = [];
 
-const cities = function() {
-    return citiesData;
-}
 class City {
     constructor() {
 
@@ -16,10 +13,7 @@ class City {
     }
 
     getCityData = async function(name) {
-        // const promise = new Promise((resolve, reject) => 
         let cityData = await $.get(`/city/${name}`)
-            // citiesData.push(cityData)
-
         if (typeof(cityData) === "object") {
             let flag = true;
             for (let item of citiesData) {
@@ -39,8 +33,7 @@ class City {
     }
 
     saveCity = async function(name) {
-        // const promise = new Promise((resolve, reject) => {
-        let cityData = await $.post("/cityPost/", name); //, function(citiesData) {
+        let cityData = await $.post("/cityPost/", name);
         if (typeof(cityData) === "object") {
             let flag = true;
             for (let item of citiesData) {
@@ -56,44 +49,22 @@ class City {
             }
         }
         return citiesData;
-        //}
-        // return cityData;
-        // resolv(cityData);
-        // });
-        // })
-        // return promise;
 
     }
 
     removeCity = async function(name) {
-            // const promise = new Promise((resolve, reject) => {
-            await $.ajax({
-                url: `/cityDelet/${name}`,
-                type: 'DELETE',
-                success: function(result) {
-                    // let cityData = await $.delete(`/cityDelet/${name}`); //, function(dataCity) {
-                    console.log('city deleted');
+        await $.ajax({
+            url: `/cityDelet/${name}`,
+            type: 'DELETE',
+            success: function(result) {
+                console.log('city deleted');
 
-                }
-            });
-            for (let index in citiesData) {
-                if (citiesData[index].name === name) {
-                    citiesData.splice(index, 1);
-                }
             }
-            // let cityData = await $.delete(`/cityDelet/${name}`); //, function(dataCity) {
-            // console.log('city deleted');
-            // for (let index in cityData) {
-            //     if (cityData[index].name === name) {
-            //         cityData.splice(index, 1);
-            //     }
-            // }
+        });
+        for (let index in citiesData) {
+            if (citiesData[index].name === name) {
+                citiesData.splice(index, 1);
+            }
         }
-        // return cityData;
-        // });
-
-    // resolve(cityData);
-    // })
-    // return promise
-    // }
+    }
 }
